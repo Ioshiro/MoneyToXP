@@ -1,0 +1,9 @@
+ItemName_IT = {
+	ItemName_MoneyToXP.100XPTraining = "Foglietto Allenamento Base",
+	ItemName_MoneyToXP.200XPTraining = "Quaderno Allenamento Medio",
+	ItemName_MoneyToXP.500XPTraining = "Giornale Allenamento Avanzato",
+	ItemName_MoneyToXP.1000XPTraining = "Libro Allenamento Esperto",
+	ItemName_MoneyToXP.XPMoneyStack = "Mazzetta",
+	ItemName_MoneyToXP.SafehouseTicket = "Ticket Ritorno Safehouse",
+	ItemName_MoneyToXP.MoneyBriefcase = "Valigetta con Mazzette"
+}

@@ -1,0 +1,7 @@
+Recipes_EN = {
+ Recipe_Convert_To_100XP_Training = "Create Basic Training Doodle (100XP)",
+ Recipe_Convert_To_200XP_Training = "Create Intermediate Training Journal (250XP)",
+ Recipe_Convert_To_500XP_Training = "Create Advanced Training Magazine (800XP)",
+ Recipe_Convert_To_1000XP_Training = "Create Expert Training Book (2500XP)",
+ Recipe_Convert_To_Safehouse_Ticket = "Create Safehouse Teleport Ticket"
+}

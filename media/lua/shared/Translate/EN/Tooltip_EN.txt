@@ -1,0 +1,8 @@
+Tooltip_EN = {
+	Tooltip_item_100XPTraining = "Adds 100 Experience Points",
+	Tooltip_item_200XPTraining = "Adds 200 Experience Points",
+	Tooltip_item_500XPTraining = "Adds 500 Experience Points",
+	Tooltip_item_1000XPTraining = "Adds 1000 Experience Points",
+	Tooltip_item_XPMoneyStack = "A stack of 100 bills tied with a rubber band",
+	Tooltip_item_SafehouseTicket = "Can be used once to return to a Safehouse you're in. Usable only in the first 6 hours of life.(keep in inventory to bring it over death)"
+}

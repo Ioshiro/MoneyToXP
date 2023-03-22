@@ -1,0 +1,1615 @@
+module MoneyToXP{
+	imports
+	{
+		Base,
+		AuthenticZClothing
+	}
+	
+	/****************************** XP TRAINING BOOKS & OTHER ITEMS ******************************/
+	
+	item 100XPTraining {
+		Weight			=	0.42,
+		Type			=	Normal,
+		DisplayCategory = 	Literature,
+		DisplayName		=	Basic Training Doodle,
+		Icon			=	100XP,
+        WorldStaticModel= 	100XP,
+		Tooltip 		= 	Tooltip_item_100XPTraining
+
+	}
+	
+	item 200XPTraining {
+		Weight			=	0.69,
+		Type			=	Normal,
+		DisplayCategory = 	Literature,
+		DisplayName		=	Intermediate Training Journal,  
+		Icon			=	200XP,
+        WorldStaticModel= 	200XP,
+		Tooltip 		= 	Tooltip_item_200XPTraining
+    
+	}
+	
+	item 500XPTraining {
+		Weight			=	1.42,
+		Type			=	Normal,
+		DisplayCategory = 	Literature,
+		DisplayName		=	Advanced Training Magazine,
+		Icon			=	500XP,
+		WorldStaticModel= 	500XP,
+		Tooltip 		= 	Tooltip_item_500XPTraining
+ 
+	}
+	
+	item 1000XPTraining {
+		Weight			=	2.69,
+		Type			=	Normal,
+		DisplayCategory = 	Literature,
+		DisplayName		=	Expert Training Book,
+		Icon			=	1000XP,
+		WorldStaticModel= 	1000XP,
+		Tooltip 		= 	Tooltip_item_1000XPTraining
+
+	}
+	
+	item SafehouseTicket {
+		Weight			=	0.2,
+		Type			=	Normal,
+		DisplayCategory 	= 	Security,
+		DisplayName		=	Return to Safehouse Ticket,
+		Icon			=	SafehouseTicket,
+		WorldStaticModel	= 	SafehouseTicket,
+		Tooltip 		= 	Tooltip_item_SafehouseTicket
+	}
+	
+	item XPMoneyStack {
+        DisplayCategory 			= 	Junk,		
+        Weight						=	0.5,
+        Type						=	Weapon,
+        DisplayName					=	Stack of Money,
+        Icon						=	XPMoneyStack,
+        primaryAnimMask 			= 	HoldingTorchRight,
+        secondaryAnimMask 			= 	HoldingTorchLeft,		
+        WeaponSprite				=	moneyStack,
+        MinAngle					=	0.1,
+        MinimumSwingTime			=	2,
+        KnockBackOnNoDeath			=	FALSE,
+        SwingAmountBeforeImpact		=	0.02,
+        Categories					=	Improvised;SmallBlunt,
+        ConditionLowerChanceOneIn	=	2,
+        SplatNumber					=	1,
+        PushBackMod					=	0.1,
+        SubCategory					=	Swinging,
+        ConditionMax				=	1,
+        MaxHitCount					=	2,
+        DoorDamage					=	1,
+        SwingAnim					=	Bat,
+        MinRange					=	0.14,
+        SwingTime					=	2,
+        KnockdownMod				=	0,
+        SplatBloodOnNoDeath			=	FALSE,
+        BreakSound  				=   BreakMetalItem,
+        TreeDamage  				=   0,
+        CriticalChance				=	1,
+        CritDmgMultiplier 			= 	1,
+        MinDamage					=	0.1,
+        MaxDamage					=	0.1,
+        BaseSpeed 					= 	1,
+        WeaponLength 				= 	0.1,		
+		AttachmentType 				= 	MeatCleaver,
+		Tooltip 					= 	Tooltip_item_XPMoneyStack
+    }
+
+    	    item MoneyBriefcase
+    {
+        DisplayCategory = Container,
+        WeightReduction	=	1,
+        Weight	=	4,
+        Type	=	Container,
+        Capacity	=	0,
+        DisplayName	=	Money Briefcase,
+        Icon	=	MoneyBriefcase,
+        OpenSound   =   OpenBag,
+        CloseSound   =   CloseBag,
+        RunSpeedModifier = 0.99,
+        PutInSound   =   PutItemInBag,
+        ReplaceInSecondHand = Bag_Briefcase_LHand holdingbagleft,
+        ReplaceInPrimaryHand = Bag_Briefcase_RHand holdingbagright,
+        WorldStaticModel = Briefcase_Ground,
+    }
+	
+	/****************************** GOODIES TO MONEY ******************************/ 
+	
+	recipe Convert To 50 Money {
+		Spiffo/AuthenticZClothing.Spiffo,
+		keep Scissors,
+		
+		Result: Money = 50, 
+		Sound:ClothesRipping,
+		AnimNode:RipSheets,
+		Category:MoneyToXP,
+		Time : 50.0
+	}
+	
+	recipe Convert To 200 Money {
+		SpiffoBig,
+		keep Scissors,
+		
+		Result: Money = 200,
+		Sound:ClothesRipping,
+		AnimNode:RipSheets,
+		Category:MoneyToXP,
+		Time : 50.0
+	}
+	
+	recipe Convert To 500 Money {
+		AuthenticZClothing.Hat_WoolyHatWaldo,
+		keep Scissors,
+		
+		Result: Money = 500,
+		Sound:ClothesRipping,
+		AnimNode:RipSheets,
+		Category:MoneyToXP,
+		Time : 50.0
+	}
+	
+	recipe Stack 100 Money {
+		Money = 100,
+		RubberBand,
+
+		Result: XPMoneyStack,
+		Category:MoneyToXP,
+		Time:50.0
+  	}
+
+	recipe Recover 100 Money {
+		XPMoneyStack,
+
+		Result : Money = 100,
+		Category:MoneyToXP,
+		OnCreate : RecoverRubberBand,
+		Time:50.0
+  	}
+	
+	recipe Convert To 100 Money {
+        LabItems.FrnGolgIngot = 10,
+        Base.Lighter = 1,
+		SheetPaper2 = 1,
+
+        Result: Money = 100,
+        Sound:Sawing,
+        AnimNode:SawLog,
+        Prop1:GardenSaw,
+        Prop2:LabItems.FrnGolgIngot,
+        Category:MoneyToXP,
+        Time : 230.0
+    }
+
+    recipe Convert To 50 Money {
+        LabItems.FrnSilverIngot = 10,
+        Base.Lighter = 1,
+        SheetPaper2 = 1,
+
+        Result: Money = 50,
+        Sound:Sawing,
+        AnimNode:SawLog,
+        Prop1:GardenSaw,
+        Prop2:LabItems.FrnSilverIngot,
+        Category:MoneyToXP,
+        Time : 230.0
+    }
+
+	recipe Open Money Briefcase{
+		MoneyBriefcase,
+
+		Result: Briefcase,
+ 		Category:MoneyToXP,
+		Time: 50.0,
+		AnimNode:RipSheets,
+		CanBeDoneFromFloor:true,
+		OnCreate:Recipe.OnCreate.OpenMoneySuitcase
+	}
+
+	recipe Create Money Briefcase{
+		Briefcase,
+		MoneyToXP.XPMoneyStack = 10,
+
+		Result: MoneyBriefcase,
+ 		Category:MoneyToXP,
+		Time: 50.0,
+		AnimNode:RipSheets,
+		CanBeDoneFromFloor:true
+	}
+
+	/****************************** MONEY TO BOOKS&TICKETS ******************************/
+	
+	recipe Convert To 100XP Training {
+		Money = 50,
+		keep Stapler,
+		Staples = 2,
+
+		Result: MoneyToXP.100XPTraining,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		Time:50.0
+		
+	}
+	
+	recipe Convert To 200XP Training {
+		Money = 100,
+		keep Stapler,
+		Staples = 2,
+		SkillRequired:Aiming=1;Axe=1;Woodwork=1;Cooking=1;Electricity=1;Farming=1;Doctor=1;Fishing=1;PlantScavenging=1;Lightfoot=1;LongBlade=1;Blunt=1;Maintenance=1;Mechanics=1;MetalWelding=1;Nimble=1;Reloading=1;SmallBlade=1;SmallBlunt=1;Sneak=1;Spear=1;Sprinting=1;Tailoring=1;Trapping=1,
+		
+		Result: MoneyToXP.200XPTraining,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		Time:100.0
+		
+	}
+	
+	recipe Convert To 500XP Training {
+		Money = 200,
+		keep Stapler,
+		Staples = 2,
+		SkillRequired:Aiming=2;Axe=2;Woodwork=2;Cooking=2;Electricity=2;Farming=2;Doctor=2;Fishing=2;PlantScavenging=2;Lightfoot=2;LongBlade=2;Blunt=2;Maintenance=2;Mechanics=2;MetalWelding=2;Nimble=2;Reloading=2;SmallBlade=2;SmallBlunt=2;Sneak=2;Spear=2;Sprinting=2;Tailoring=2;Trapping=2,
+		
+		Result: MoneyToXP.500XPTraining,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		Time:150.0
+		
+	}
+	
+	recipe Convert To 1000XP Training {
+		Money = 400,
+		keep Stapler,
+		Staples = 4,
+		SkillRequired:Aiming=2;Axe=3;Woodwork=3;Cooking=3;Electricity=3;Farming=3;Doctor=3;Fishing=3;PlantScavenging=3;Lightfoot=3;LongBlade=3;Blunt=3;Maintenance=3;Mechanics=3;MetalWelding=3;Nimble=3;Reloading=3;SmallBlade=3;SmallBlunt=3;Sneak=3;Spear=3;Sprinting=3;Tailoring=3;Trapping=3,
+		
+		Result: MoneyToXP.1000XPTraining,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		Time:250.0
+		
+	}
+	/*
+	recipe Convert To 100XP Training {
+		MoneyToXP.XPMoneyStack,
+		keep Stapler,
+		Staples = 2,
+		
+		
+		Result: MoneyToXP.100XPTraining,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		OnCreate : RecoverRubberBands,
+		Time:50.0
+		
+	}
+	*/
+	recipe Convert To 200XP Training {
+		MoneyToXP.XPMoneyStack = 1,
+		keep Stapler,
+		Staples = 2,
+		SkillRequired:Aiming=1;Axe=1;Woodwork=1;Cooking=1;Electricity=1;Farming=1;Doctor=1;Fishing=1;PlantScavenging=1;Lightfoot=1;LongBlade=1;Blunt=1;Maintenance=1;Mechanics=1;MetalWelding=1;Nimble=1;Reloading=1;SmallBlade=1;SmallBlunt=1;Sneak=1;Spear=1;Sprinting=1;Tailoring=1;Trapping=1,
+		
+		
+		Result: MoneyToXP.200XPTraining,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		OnCreate : RecoverRubberBands,
+		Time:100.0
+		
+	}
+	
+	recipe Convert To 500XP Training {
+		MoneyToXP.XPMoneyStack = 2,
+		keep Stapler,
+		Staples = 2,
+		SkillRequired:Aiming=2;Axe=2;Woodwork=2;Cooking=2;Electricity=2;Farming=2;Doctor=2;Fishing=2;PlantScavenging=2;Lightfoot=2;LongBlade=2;Blunt=2;Maintenance=2;Mechanics=2;MetalWelding=2;Nimble=2;Reloading=2;SmallBlade=2;SmallBlunt=2;Sneak=2;Spear=2;Sprinting=2;Tailoring=2;Trapping=2,
+		
+		
+		Result: MoneyToXP.500XPTraining,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		OnCreate : RecoverRubberBands,
+		Time:150.0
+		
+	}
+	
+	recipe Convert To 1000XP Training {
+		MoneyToXP.XPMoneyStack = 4,
+		keep Stapler,
+		Staples = 4,
+		SkillRequired:Aiming=3;Axe=3;Woodwork=3;Cooking=3;Electricity=3;Farming=3;Doctor=3;Fishing=3;PlantScavenging=3;Lightfoot=3;LongBlade=3;Blunt=3;Maintenance=3;Mechanics=3;MetalWelding=3;Nimble=3;Reloading=3;SmallBlade=3;SmallBlunt=3;Sneak=3;Spear=3;Sprinting=3;Tailoring=3;Trapping=3,
+		
+		
+		Result: MoneyToXP.1000XPTraining,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		OnCreate : RecoverRubberBands,
+		Time:250.0
+		
+	}
+	
+	recipe Convert To Safehouse Ticket {
+		Money = 25,
+		keep Pen/RedPen/BluePen,  
+		
+		
+		Result: MoneyToXP.SafehouseTicket,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		Time:250.0
+	
+	}
+/*
+	recipe Create Money Briefcase {
+		XPMoneyStack = 10,
+		Briefcase,
+		
+		Result: MoneyBriefcase,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		Time:100.0
+	}
+*/
+	/****************************** TRAINING ******************************/
+	
+	recipe Train Aim {
+		MoneyToXP.100XPTraining,
+		
+		Result:Pistol,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP1,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Axe {
+		MoneyToXP.100XPTraining,
+		
+		Result:Axe,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP2,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Carpentry {
+		MoneyToXP.100XPTraining,
+		
+		Result:Hammer,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP3,
+		Time : 2000.0
+		
+	}
+	
+		recipe Train Cooking {
+		MoneyToXP.100XPTraining,
+		
+		Result: Cupcake,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP4,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Electrical {
+		MoneyToXP.100XPTraining,
+		
+		Result: ElectronicsScrap,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP5,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Farming {
+		MoneyToXP.100XPTraining,
+		
+		Result: Rake,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP6,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train First Aid {
+		MoneyToXP.100XPTraining,
+		
+		Result: Bandage,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP7,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Fishing {
+		MoneyToXP.100XPTraining,
+		
+		Result: FishingRod,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP8,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Fitness {
+		MoneyToXP.100XPTraining,
+		
+		Result: Hat_Sweatband,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP9,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Foraging {
+		MoneyToXP.100XPTraining,
+		
+		Result: Twigs,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP10,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Lightfoot {
+		MoneyToXP.100XPTraining,
+		
+		Result: Shoes_RedTrainers,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP11,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Long Blade {
+		MoneyToXP.100XPTraining,
+		
+		Result: Katana,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP12,
+		Time : 2000.0
+		
+	}
+	recipe Train Long Blunt {
+        MoneyToXP.100XPTraining,
+
+        Result: BaseballBat,
+        Category:MoneyToXP,
+        RemoveResultItem:true,
+        OnCreate : TrainXP,
+        AnimNode: DanceXP26,
+        Time : 2000.0
+
+    }
+	
+	recipe Train Maintenance {
+		MoneyToXP.100XPTraining,
+		
+		Result: DuctTape,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP13,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Mechanics {
+		MoneyToXP.100XPTraining,
+		
+		Result: Wrench,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP14,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Metalworking {
+		MoneyToXP.100XPTraining,
+		
+		Result: BlowTorch,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP15,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Nimble {
+		MoneyToXP.100XPTraining,
+		
+		Result: Shoes_ArmyBoots,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP16,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Reloading {
+		MoneyToXP.100XPTraining,
+		
+		Result: 9mmClip,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP17,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Short Blade {
+		MoneyToXP.100XPTraining,
+		
+		Result: HuntingKnife,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP18,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Short Blunt {
+		MoneyToXP.100XPTraining,
+		
+		Result: Nightstick,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP19,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Sneak {
+		MoneyToXP.100XPTraining,
+		
+		Result: Hat_BalaclavaFull,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP20,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Spear {
+		MoneyToXP.100XPTraining,
+		
+		Result: WoodenLance,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP21,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Sprinting {
+		MoneyToXP.100XPTraining,
+		
+		Result: Shoes_BlueTrainers,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP22,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Strength {
+		MoneyToXP.100XPTraining,
+		
+		Result: DumbBell,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP23,
+		Time : 2000.0
+		
+	}
+	
+	recipe Train Tailoring {
+		MoneyToXP.100XPTraining,
+		
+		Result: Thread,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP24,
+		Time : 2000.0
+		
+	}	
+	
+	recipe Train Trapping {
+		MoneyToXP.100XPTraining,
+		
+		Result: TrapCage,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP25,
+		Time : 2000.0
+		
+	}
+
+	
+
+	recipe Train Aim {
+		MoneyToXP.200XPTraining,
+		
+		Result:Pistol,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP1,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Axe {
+		MoneyToXP.200XPTraining,
+		
+		Result:Axe,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP2,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Carpentry {
+		MoneyToXP.200XPTraining,
+		
+		Result:Hammer,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP3,
+		Time : 3600.0
+		
+	}
+	
+		recipe Train Cooking {
+		MoneyToXP.200XPTraining,
+		
+		Result: Cupcake,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP4,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Electrical {
+		MoneyToXP.200XPTraining,
+		
+		Result: ElectronicsScrap,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP5,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Farming {
+		MoneyToXP.200XPTraining,
+		
+		Result: Rake,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP6,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train First Aid {
+		MoneyToXP.200XPTraining,
+		
+		Result: Bandage,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP7,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Fishing {
+		MoneyToXP.200XPTraining,
+		
+		Result: FishingRod,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP8,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Fitness {
+		MoneyToXP.200XPTraining,
+		
+		Result: Hat_Sweatband,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP9,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Foraging {
+		MoneyToXP.200XPTraining,
+		
+		Result: Twigs,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP10,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Lightfoot {
+		MoneyToXP.200XPTraining,
+		
+		Result: Shoes_RedTrainers,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP11,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Long Blade {
+		MoneyToXP.200XPTraining,
+		
+		Result: Katana,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP12,
+		Time : 3600.0
+		
+	}
+	 
+	 recipe Train Long Blunt {
+        MoneyToXP.200XPTraining,
+
+        Result: BaseballBat,
+        Category:MoneyToXP,
+        RemoveResultItem:true,
+        OnCreate : TrainXP,
+        AnimNode: DanceXP26,
+        Time : 3600.0
+
+    }
+	
+	recipe Train Maintenance {
+		MoneyToXP.200XPTraining,
+		
+		Result: DuctTape,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP13,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Mechanics {
+		MoneyToXP.200XPTraining,
+		
+		Result: Wrench,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP14,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Metalworking {
+		MoneyToXP.200XPTraining,
+		
+		Result: BlowTorch,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP15,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Nimble {
+		MoneyToXP.200XPTraining,
+		
+		Result: Shoes_ArmyBoots,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP16,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Reloading {
+		MoneyToXP.200XPTraining,
+		
+		Result: 9mmClip,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP17,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Short Blade {
+		MoneyToXP.200XPTraining,
+		
+		Result: HuntingKnife,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP18,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Short Blunt {
+		MoneyToXP.200XPTraining,
+		
+		Result: Nightstick,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP19,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Sneak {
+		MoneyToXP.200XPTraining,
+		
+		Result: Hat_BalaclavaFull,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP20,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Spear {
+		MoneyToXP.200XPTraining,
+		
+		Result: WoodenLance,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP21,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Sprinting {
+		MoneyToXP.200XPTraining,
+		
+		Result: Shoes_BlueTrainers,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP22,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Strength {
+		MoneyToXP.200XPTraining,
+		
+		Result: DumbBell,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP23,
+		Time : 3600.0
+		
+	}
+	
+	recipe Train Tailoring {
+		MoneyToXP.200XPTraining,
+		
+		Result: Thread,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP24,
+		Time : 3600.0
+		
+	}	
+	
+	recipe Train Trapping {
+		MoneyToXP.200XPTraining,
+		
+		Result: TrapCage,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP25,
+		Time : 3600.0
+		
+	}
+
+	
+
+	recipe Train Aim {
+		MoneyToXP.500XPTraining,
+		
+		Result:Pistol,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP1,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Axe {
+		MoneyToXP.500XPTraining,
+		
+		Result:Axe,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP2,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Carpentry {
+		MoneyToXP.500XPTraining,
+		
+		Result:Hammer,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP3,
+		Time : 7200.0
+		
+	}
+	
+		recipe Train Cooking {
+		MoneyToXP.500XPTraining,
+		
+		Result: Cupcake,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP4,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Electrical {
+		MoneyToXP.500XPTraining,
+		
+		Result: ElectronicsScrap,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP5,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Farming {
+		MoneyToXP.500XPTraining,
+		
+		Result: Rake,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP6,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train First Aid {
+		MoneyToXP.500XPTraining,
+		
+		Result: Bandage,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP7,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Fishing {
+		MoneyToXP.500XPTraining,
+		
+		Result: FishingRod,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP8,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Fitness {
+		MoneyToXP.500XPTraining,
+		
+		Result: Hat_Sweatband,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP9,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Foraging {
+		MoneyToXP.500XPTraining,
+		
+		Result: Twigs,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP10,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Lightfoot {
+		MoneyToXP.500XPTraining,
+		
+		Result: Shoes_RedTrainers,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP11,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Long Blade {
+		MoneyToXP.500XPTraining,
+		
+		Result: Katana,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP12,
+		Time : 7200.0
+		
+	}
+	
+	 recipe Train Long Blunt {
+        MoneyToXP.500XPTraining,
+
+        Result: BaseballBat,
+        Category:MoneyToXP,
+        RemoveResultItem:true,
+        OnCreate : TrainXP,
+        AnimNode: DanceXP26,
+        Time : 7200.0
+
+    }
+	
+	recipe Train Maintenance {
+		MoneyToXP.500XPTraining,
+		
+		Result: DuctTape,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP13,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Mechanics {
+		MoneyToXP.500XPTraining,
+		
+		Result: Wrench,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP14,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Metalworking {
+		MoneyToXP.500XPTraining,
+		
+		Result: BlowTorch,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP15,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Nimble {
+		MoneyToXP.500XPTraining,
+		
+		Result: Shoes_ArmyBoots,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP16,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Reloading {
+		MoneyToXP.500XPTraining,
+		
+		Result: 9mmClip,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP17,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Short Blade {
+		MoneyToXP.500XPTraining,
+		
+		Result: HuntingKnife,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP18,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Short Blunt {
+		MoneyToXP.500XPTraining,
+		
+		Result: Nightstick,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP19,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Sneak {
+		MoneyToXP.500XPTraining,
+		
+		Result: Hat_BalaclavaFull,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP20,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Spear {
+		MoneyToXP.500XPTraining,
+		
+		Result: WoodenLance,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP21,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Sprinting {
+		MoneyToXP.500XPTraining,
+		
+		Result: Shoes_BlueTrainers,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP22,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Strength {
+		MoneyToXP.500XPTraining,
+		
+		Result: DumbBell,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP23,
+		Time : 7200.0
+		
+	}
+	
+	recipe Train Tailoring {
+		MoneyToXP.500XPTraining,
+		
+		Result: Thread,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP24,
+		Time : 7200.0
+		
+	}	
+	
+	recipe Train Trapping {
+		MoneyToXP.500XPTraining,
+		
+		Result: TrapCage,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP25,
+		Time : 7200.0
+		
+	}
+
+	
+
+	recipe Train Aim {
+		MoneyToXP.1000XPTraining,
+		
+		Result:Pistol,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP1,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Axe {
+		MoneyToXP.1000XPTraining,
+		
+		Result:Axe,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP2,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Carpentry {
+		MoneyToXP.1000XPTraining,
+		
+		Result:Hammer,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP3,
+		Time : 10000.0
+		
+	}
+	
+		recipe Train Cooking {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Cupcake,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP4,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Electrical {
+		MoneyToXP.1000XPTraining,
+		
+		Result: ElectronicsScrap,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP5,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Farming {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Rake,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP6,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train First Aid {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Bandage,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP7,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Fishing {
+		MoneyToXP.1000XPTraining,
+		
+		Result: FishingRod,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP8,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Fitness {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Hat_Sweatband,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP9,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Foraging {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Twigs,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP10,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Lightfoot {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Shoes_RedTrainers,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP11,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Long Blade {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Katana,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP12,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Long Blunt {
+        MoneyToXP.1000XPTraining,
+
+        Result: BaseballBat,
+        Category:MoneyToXP,
+        RemoveResultItem:true,
+        OnCreate : TrainXP,
+        AnimNode: DanceXP26,
+        Time : 10000.0
+
+    }
+	
+	recipe Train Maintenance {
+		MoneyToXP.1000XPTraining,
+		
+		Result: DuctTape,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP13,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Mechanics {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Wrench,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP14,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Metalworking {
+		MoneyToXP.1000XPTraining,
+		
+		Result: BlowTorch,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP15,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Nimble {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Shoes_ArmyBoots,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP16,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Reloading {
+		MoneyToXP.1000XPTraining,
+		
+		Result: 9mmClip,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP17,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Short Blade {
+		MoneyToXP.1000XPTraining,
+		
+		Result: HuntingKnife,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP18,
+		Time : 10000.0
+		
+	}
+	
+	
+	recipe Train Short Blunt {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Nightstick,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP19,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Sneak {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Hat_BalaclavaFull,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP20,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Spear {
+		MoneyToXP.1000XPTraining,
+		
+		Result: WoodenLance,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP21,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Sprinting {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Shoes_BlueTrainers,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP22,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Strength {
+		MoneyToXP.1000XPTraining,
+		
+		Result: DumbBell,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP23,
+		Time : 10000.0
+		
+	}
+	
+	recipe Train Tailoring {
+		MoneyToXP.1000XPTraining,
+		
+		Result: Thread,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP24,
+		Time : 10000.0
+		
+	}	
+	
+	recipe Train Trapping {
+		MoneyToXP.1000XPTraining,
+		
+		Result: TrapCage,
+		Category:MoneyToXP,
+		RemoveResultItem:true,
+		OnCreate : TrainXP,
+		AnimNode: DanceXP25,
+		Time : 10000.0
+		
+	}
+
+	
+
+}

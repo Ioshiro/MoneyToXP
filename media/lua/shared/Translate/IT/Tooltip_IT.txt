@@ -1,0 +1,8 @@
+Tooltip_IT = {
+	Tooltip_item_100XPTraining = "Fornisce 100 punti esperienza",
+	Tooltip_item_200XPTraining = "Fornisce 250 punti esperienza",
+	Tooltip_item_500XPTraining = "Fornisce 800 punti esperienza",
+	Tooltip_item_1000XPTraining = "Fornisce 2500 punti esperienza",
+	Tooltip_item_XPMoneyStack = "100 banconote legate con un elastico",
+	Tooltip_item_SafehouseTicket = "Può essere usato una volta per tornare alla propria Safehouse entro le prime 6 ore di vita.(tenere nell'inventario per mantenerlo dopo la morte)"
+}
