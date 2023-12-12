@@ -121,7 +121,7 @@ module MoneyToXP{
 	
 	recipe Convert To 50 Money {
 		Spiffo/AuthenticZClothing.Spiffo,
-		keep Scissors,
+		keep [Recipe.GetItemTypes.SharpKnife]/MeatCleaver/Scissors,
 		
 		Result: Money = 50, 
 		Sound:ClothesRipping,
@@ -132,7 +132,7 @@ module MoneyToXP{
 	
 	recipe Convert To 200 Money {
 		SpiffoBig,
-		keep Scissors,
+		keep [Recipe.GetItemTypes.SharpKnife]/MeatCleaver/Scissors,
 		
 		Result: Money = 200,
 		Sound:ClothesRipping,
@@ -143,7 +143,7 @@ module MoneyToXP{
 	
 	recipe Convert To 500 Money {
 		AuthenticZClothing.Hat_WoolyHatWaldo,
-		keep Scissors,
+		keep [Recipe.GetItemTypes.SharpKnife]/MeatCleaver/Scissors,
 		
 		Result: Money = 500,
 		Sound:ClothesRipping,
@@ -331,18 +331,17 @@ module MoneyToXP{
 		Time:250.0
 		
 	}
-	
+	/*
 	recipe Convert To Safehouse Ticket {
 		Money = 25,
 		keep Pen/RedPen/BluePen,  
-		
 		
 		Result: MoneyToXP.SafehouseTicket,
 		Category:MoneyToXP,
 		AnimNode:RemoveGrass,
 		Time:250.0
-	
 	}
+	*/
 /*
 	recipe Create Money Briefcase {
 		XPMoneyStack = 10,
