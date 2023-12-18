@@ -12,8 +12,8 @@ module MoneyToXP{
 		Type			=	Normal,
 		DisplayCategory = 	Literature,
 		DisplayName		=	Basic Training Doodle,
-		Icon			=	100XP,
-        WorldStaticModel= 	100XP,
+		Icon			=	100XP,        
+		WorldStaticModel = EmptyNotebook,
 		Tooltip 		= 	Tooltip_item_100XPTraining
 
 	}
@@ -24,7 +24,7 @@ module MoneyToXP{
 		DisplayCategory = 	Literature,
 		DisplayName		=	Intermediate Training Journal,  
 		Icon			=	200XP,
-        WorldStaticModel= 	200XP,
+        WorldStaticModel = Newspaper_Ground,
 		Tooltip 		= 	Tooltip_item_200XPTraining
     
 	}
@@ -35,7 +35,7 @@ module MoneyToXP{
 		DisplayCategory = 	Literature,
 		DisplayName		=	Advanced Training Magazine,
 		Icon			=	500XP,
-		WorldStaticModel= 	500XP,
+        WorldStaticModel = MagazineGround,
 		Tooltip 		= 	Tooltip_item_500XPTraining
  
 	}
@@ -46,7 +46,7 @@ module MoneyToXP{
 		DisplayCategory = 	Literature,
 		DisplayName		=	Expert Training Book,
 		Icon			=	1000XP,
-		WorldStaticModel= 	1000XP,
+		WorldStaticModel = BookClosedGround,
 		Tooltip 		= 	Tooltip_item_1000XPTraining
 
 	}
@@ -56,8 +56,8 @@ module MoneyToXP{
 		Type			=	Normal,
 		DisplayCategory 	= 	Security,
 		DisplayName		=	Return to Safehouse Ticket,
-		Icon			=	SafehouseTicket,
-		WorldStaticModel	= 	SafehouseTicket,
+		Icon			=	SafehouseTicket,        
+		WorldStaticModel = EmptyNotebook,
 		Tooltip 		= 	Tooltip_item_SafehouseTicket
 	}
 	
@@ -96,7 +96,8 @@ module MoneyToXP{
         BaseSpeed 					= 	1,
         WeaponLength 				= 	0.1,		
 		AttachmentType 				= 	MeatCleaver,
-		Tooltip 					= 	Tooltip_item_XPMoneyStack
+		Tooltip 					= 	Tooltip_item_XPMoneyStack,        
+		WorldStaticModel = Money,
     }
 
     	    item MoneyBriefcase
