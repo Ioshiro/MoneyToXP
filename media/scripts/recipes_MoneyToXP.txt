@@ -60,7 +60,7 @@ module MoneyToXP{
 		WorldStaticModel = EmptyNotebook,
 		Tooltip 		= 	Tooltip_item_SafehouseTicket
 	}
-	
+	--[[
 	item XPMoneyStack {
         DisplayCategory 			= 	Junk,		
         Weight						=	0.5,
@@ -117,25 +117,61 @@ module MoneyToXP{
         ReplaceInPrimaryHand = Bag_Briefcase_RHand holdingbagright,
         WorldStaticModel = Briefcase_Ground,
     }
+	]]
+
+	item Rotolo {
+		Weight			=	0.05,
+		Type			=	Normal,
+		DisplayCategory = 	Economy,
+		DisplayName		=	Rotolo di Soldi,
+		Icon			=	Rotolo,
+		WorldStaticModel =  Bandage,
+	}
+
+	item Mazzetta {
+		Weight			=	0.2,
+		Type			=	Normal,
+		DisplayCategory = 	Economy,
+		DisplayName		=	Mazzetta,
+		Icon			=	Mazzetta,
+	}
+
+	item Valigetta5 {
+		Weight			=	1.0,
+		Type			=	Normal,
+		DisplayCategory = 	Economy,
+		DisplayName		=	Valigetta con Soldi,
+		Icon			=	MoneyBriefcase,
+        WorldStaticModel = Briefcase_Ground,
+	}
+
+	item Valigetta10 {
+		Weight			=	2.0,
+		Type			=	Normal,
+		DisplayCategory = 	Economy,
+		DisplayName		=	Grande Valigetta con Soldi,
+		Icon			=	MoneyBriefcase,
+		WorldStaticModel = Briefcase_Ground,
+	}
 	
 	/****************************** GOODIES TO MONEY ******************************/ 
 	
-	recipe Convert To 50 Money {
+	recipe Convert To 100 Money {
 		Spiffo/AuthenticZClothing.Spiffo,
 		keep [Recipe.GetItemTypes.SharpKnife]/MeatCleaver/Scissors,
 		
-		Result: Money = 50, 
+		Result: Money = 100, 
 		Sound:ClothesRipping,
 		AnimNode:RipSheets,
 		Category:MoneyToXP,
 		Time : 50.0
 	}
 	
-	recipe Convert To 200 Money {
+	recipe Convert To 1000 Money {
 		SpiffoBig,
 		keep [Recipe.GetItemTypes.SharpKnife]/MeatCleaver/Scissors,
 		
-		Result: Money = 200,
+		Result: Money = 1000,
 		Sound:ClothesRipping,
 		AnimNode:RipSheets,
 		Category:MoneyToXP,
@@ -219,6 +255,79 @@ module MoneyToXP{
 		Time: 50.0,
 		AnimNode:RipSheets,
 		CanBeDoneFromFloor:true
+	}
+
+	recipe Arrotola Soldi {
+		Money = 50,
+
+		Result: Rotolo,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		Time:50.0
+	}
+
+	recipe Srotola Soldi {
+		Rotolo,
+
+		Result : Money = 50,
+		Category:MoneyToXP,
+		Time:50.0
+	} 
+
+	recipe Fai Mazzetta {
+		Rotolo = 10,
+		RubberBand/Scotchtape/PaperClip,
+
+		Result: Mazzetta,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		Time:50.0
+	}
+
+	recipe Srotola Mazzetta {
+		Mazzetta,
+
+		Result : Rotolo = 10,
+		Category:MoneyToXP,
+		Time:50.0
+	}
+
+	recipe Fai Valigetta con Soldi {
+		Mazzetta = 5,
+		Briefcase,
+
+		Result: Valigetta5,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		Time:50.0
+	}
+
+	recipe Fai Grande Valigetta con Soldi {
+		Mazzetta = 10,
+		Briefcase,
+
+		Result: Valigetta10,
+		Category:MoneyToXP,
+		AnimNode:RemoveGrass,
+		Time:50.0
+	}
+
+	recipe Recupera da Valigetta {
+		Valigetta5,
+
+		Result : Briefcase,
+		Category:MoneyToXP,
+		Time:50.0,
+		OnCreate:Recipe.OnCreate.OpenValigetta5
+	}
+
+	recipe Recupera da Valigetta {
+		Valigetta10,
+
+		Result : Briefcase,
+		Category:MoneyToXP,
+		Time:50.0,
+		OnCreate:Recipe.OnCreate.OpenValigetta10
 	}
 
 	/****************************** MONEY TO BOOKS&TICKETS ******************************/
