@@ -60,7 +60,7 @@ module MoneyToXP{
 		WorldStaticModel = EmptyNotebook,
 		Tooltip 		= 	Tooltip_item_SafehouseTicket
 	}
-	--[[
+	
 	item XPMoneyStack {
         DisplayCategory 			= 	Junk,		
         Weight						=	0.5,
@@ -117,7 +117,7 @@ module MoneyToXP{
         ReplaceInPrimaryHand = Bag_Briefcase_RHand holdingbagright,
         WorldStaticModel = Briefcase_Ground,
     }
-	]]
+
 
 	item Rotolo {
 		Weight			=	0.05,
