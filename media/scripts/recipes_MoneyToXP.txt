@@ -140,7 +140,7 @@ module MoneyToXP{
 		Weight			=	1.0,
 		Type			=	Normal,
 		DisplayCategory = 	Economy,
-		DisplayName		=	Valigetta con Soldi,
+		DisplayName		=	Valigetta con 2000$,
 		Icon			=	MoneyBriefcase,
         WorldStaticModel = Briefcase_Ground,
 	}
@@ -149,7 +149,7 @@ module MoneyToXP{
 		Weight			=	2.0,
 		Type			=	Normal,
 		DisplayCategory = 	Economy,
-		DisplayName		=	Grande Valigetta con Soldi,
+		DisplayName		=	Valigetta con 5000$,
 		Icon			=	MoneyBriefcase,
 		WorldStaticModel = Briefcase_Ground,
 	}
