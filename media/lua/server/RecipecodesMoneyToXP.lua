@@ -86,7 +86,7 @@ function Recipe.OnCreate.OpenMoneySuitcase(items, result, player)
 end
 
 function Recipe.OnCreate.OpenValigetta5(items, result, player)
-	player:getInventory():AddItems("MoneyToXP.Mazzetta", 5)
+	player:getInventory():AddItems("MoneyToXP.Mazzetta", 4)
 end
 
 function Recipe.OnCreate.OpenValigetta10(items, result, player)

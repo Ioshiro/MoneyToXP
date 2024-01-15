@@ -276,7 +276,7 @@ module MoneyToXP{
 
 	recipe Fai Mazzetta {
 		Rotolo = 10,
-		RubberBand/Scotchtape/PaperClip,
+		RubberBand/Scotchtape/Paperclip,
 
 		Result: Mazzetta,
 		Category:MoneyToXP,
@@ -293,7 +293,7 @@ module MoneyToXP{
 	}
 
 	recipe Fai Valigetta con Soldi {
-		Mazzetta = 5,
+		Mazzetta = 4,
 		Briefcase,
 
 		Result: Valigetta5,
