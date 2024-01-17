@@ -29,13 +29,13 @@ local function OnFillInventoryObjectContextMenu(playerIndex, context, items)
 
     local option = context:getOptionFromName(getText("ContextMenu_Eat"))
     if option then
-        option.name = "Drogatická"
+        option.name = "Drogati"
         option.target = nil
         option.onSelect = nil
         option.param1 = nil
         option.param2 = nil
     else
-        option = context:addOption("Drogatická", player, nil, nil, nil)
+        option = context:addOption("Drogati", player, nil, nil, nil)
     end
 
     if player:getMoodles():getMoodleLevel(MoodleType.FoodEaten) >= 3 and player:getNutrition():getCalories() >= 1000 then
