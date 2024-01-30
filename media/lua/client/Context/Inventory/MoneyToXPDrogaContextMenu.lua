@@ -46,7 +46,7 @@ local function OnFillInventoryObjectContextMenu(playerIndex, context, items)
     else
         local subMenuSkills = ISContextMenu:getNew(context);
         context:addSubMenu(option, subMenuSkills);
-        subMenuSkills:addOption("ContextMenu_Train_Aim", playerIndex, onDroga, Perks.Axe, items)
+        subMenuSkills:addOption("ContextMenu_Train_Axe", playerIndex, onDroga, Perks.Axe, items)
         subMenuSkills:addOption("ContextMenu_Train_Aim", playerIndex, onDroga, Perks.Aiming, items)
         subMenuSkills:addOption("ContextMenu_Train_Carpentry", playerIndex, onDroga, Perks.Woodwork, items)
         subMenuSkills:addOption("ContextMenu_Train_Cooking", playerIndex, onDroga, Perks.Cooking, items)
