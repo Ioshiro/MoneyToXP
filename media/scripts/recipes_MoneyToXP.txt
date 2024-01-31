@@ -185,7 +185,6 @@ module MoneyToXP{
 		Lipids = 0,
 		Proteins = 0,
 		WorldStaticModel = MintCandy,
-		PoisonPower = 1,
 
 	}
 
@@ -205,7 +204,6 @@ module MoneyToXP{
 		Proteins = 0,
 		WorldStaticModel = MintCandy,
 		Tags = HasMetal,
-		PoisonPower = 1,
 	}
 
 	item Droga4 {
@@ -224,7 +222,6 @@ module MoneyToXP{
 		Proteins = 0,
 		WorldStaticModel = MintCandy,
 		Tags = HasMetal,
-		PoisonPower = 1,
 	}
 
 	item Droga5 {
@@ -243,7 +240,6 @@ module MoneyToXP{
 		Proteins = 0,
 		WorldStaticModel = MintCandy,
 		Tags = HasMetal,
-		PoisonPower = 1,
 	}
 
 
