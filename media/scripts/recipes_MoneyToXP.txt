@@ -325,28 +325,6 @@ module MoneyToXP{
         Time : 230.0
     }
 
-	recipe Open Money Briefcase{
-		MoneyBriefcase,
-
-		Result: Briefcase,
- 		Category:MoneyToXP,
-		Time: 50.0,
-		AnimNode:RipSheets,
-		CanBeDoneFromFloor:true,
-		OnCreate:Recipe.OnCreate.OpenMoneySuitcase
-	}
-
-	recipe Create Money Briefcase{
-		Briefcase,
-		MoneyToXP.XPMoneyStack = 10,
-
-		Result: MoneyBriefcase,
- 		Category:MoneyToXP,
-		Time: 50.0,
-		AnimNode:RipSheets,
-		CanBeDoneFromFloor:true
-	}
-
 	recipe Arrotola Soldi {
 		Money = 50,
 
@@ -422,17 +400,7 @@ module MoneyToXP{
 
 	/****************************** MONEY TO BOOKS&TICKETS ******************************/
 	
-	recipe Convert To 100XP Training {
-		Money = 50,
-		keep Stapler,
-		Staples = 2,
 
-		Result: MoneyToXP.100XPTraining,
-		Category:MoneyToXP,
-		AnimNode:RemoveGrass,
-		Time:50.0
-		
-	}
 
 	recipe Make Drug1 {
 		GunPowder = 10, BakingSoda, WildGarlicCataplasm, PlantainCataplasm, ComfreyCataplasm, ,Lab.Items.ChHydrocholoricAcidCan= 1,LabItemsChSulfuricAcidCan= 1,LabItems.ChSodiumHydroxideBag = 1,LabItems.MatInfectedBlood,
@@ -488,103 +456,6 @@ module MoneyToXP{
 		Time:500.0
 	}
 	
-	recipe Convert To 200XP Training {
-		Money = 100,
-		keep Stapler,
-		Staples = 2,
-		SkillRequired:Aiming=1;Axe=1;Woodwork=1;Cooking=1;Electricity=1;Farming=1;Doctor=1;Fishing=1;PlantScavenging=1;Lightfoot=1;LongBlade=1;Blunt=1;Maintenance=1;Mechanics=1;MetalWelding=1;Nimble=1;Reloading=1;SmallBlade=1;SmallBlunt=1;Sneak=1;Spear=1;Sprinting=1;Tailoring=1;Trapping=1,
-		
-		Result: MoneyToXP.200XPTraining,
-		Category:MoneyToXP,
-		AnimNode:RemoveGrass,
-		Time:100.0
-		
-	}
-	
-	recipe Convert To 500XP Training {
-		Money = 200,
-		keep Stapler,
-		Staples = 2,
-		SkillRequired:Aiming=2;Axe=2;Woodwork=2;Cooking=2;Electricity=2;Farming=2;Doctor=2;Fishing=2;PlantScavenging=2;Lightfoot=2;LongBlade=2;Blunt=2;Maintenance=2;Mechanics=2;MetalWelding=2;Nimble=2;Reloading=2;SmallBlade=2;SmallBlunt=2;Sneak=2;Spear=2;Sprinting=2;Tailoring=2;Trapping=2,
-		
-		Result: MoneyToXP.500XPTraining,
-		Category:MoneyToXP,
-		AnimNode:RemoveGrass,
-		Time:150.0
-		
-	}
-	
-	recipe Convert To 1000XP Training {
-		Money = 400,
-		keep Stapler,
-		Staples = 4,
-		SkillRequired:Aiming=2;Axe=3;Woodwork=3;Cooking=3;Electricity=3;Farming=3;Doctor=3;Fishing=3;PlantScavenging=3;Lightfoot=3;LongBlade=3;Blunt=3;Maintenance=3;Mechanics=3;MetalWelding=3;Nimble=3;Reloading=3;SmallBlade=3;SmallBlunt=3;Sneak=3;Spear=3;Sprinting=3;Tailoring=3;Trapping=3,
-		
-		Result: MoneyToXP.1000XPTraining,
-		Category:MoneyToXP,
-		AnimNode:RemoveGrass,
-		Time:250.0
-		
-	}
-	/*
-	recipe Convert To 100XP Training {
-		MoneyToXP.XPMoneyStack,
-		keep Stapler,
-		Staples = 2,
-		
-		
-		Result: MoneyToXP.100XPTraining,
-		Category:MoneyToXP,
-		AnimNode:RemoveGrass,
-		OnCreate : RecoverRubberBands,
-		Time:50.0
-		
-	}
-	*/
-	recipe Convert To 200XP Training {
-		MoneyToXP.XPMoneyStack = 1,
-		keep Stapler,
-		Staples = 2,
-		SkillRequired:Aiming=1;Axe=1;Woodwork=1;Cooking=1;Electricity=1;Farming=1;Doctor=1;Fishing=1;PlantScavenging=1;Lightfoot=1;LongBlade=1;Blunt=1;Maintenance=1;Mechanics=1;MetalWelding=1;Nimble=1;Reloading=1;SmallBlade=1;SmallBlunt=1;Sneak=1;Spear=1;Sprinting=1;Tailoring=1;Trapping=1,
-		
-		
-		Result: MoneyToXP.200XPTraining,
-		Category:MoneyToXP,
-		AnimNode:RemoveGrass,
-		OnCreate : RecoverRubberBands,
-		Time:100.0
-		
-	}
-	
-	recipe Convert To 500XP Training {
-		MoneyToXP.XPMoneyStack = 2,
-		keep Stapler,
-		Staples = 2,
-		SkillRequired:Aiming=2;Axe=2;Woodwork=2;Cooking=2;Electricity=2;Farming=2;Doctor=2;Fishing=2;PlantScavenging=2;Lightfoot=2;LongBlade=2;Blunt=2;Maintenance=2;Mechanics=2;MetalWelding=2;Nimble=2;Reloading=2;SmallBlade=2;SmallBlunt=2;Sneak=2;Spear=2;Sprinting=2;Tailoring=2;Trapping=2,
-		
-		
-		Result: MoneyToXP.500XPTraining,
-		Category:MoneyToXP,
-		AnimNode:RemoveGrass,
-		OnCreate : RecoverRubberBands,
-		Time:150.0
-		
-	}
-	
-	recipe Convert To 1000XP Training {
-		MoneyToXP.XPMoneyStack = 4,
-		keep Stapler,
-		Staples = 4,
-		SkillRequired:Aiming=3;Axe=3;Woodwork=3;Cooking=3;Electricity=3;Farming=3;Doctor=3;Fishing=3;PlantScavenging=3;Lightfoot=3;LongBlade=3;Blunt=3;Maintenance=3;Mechanics=3;MetalWelding=3;Nimble=3;Reloading=3;SmallBlade=3;SmallBlunt=3;Sneak=3;Spear=3;Sprinting=3;Tailoring=3;Trapping=3,
-		
-		
-		Result: MoneyToXP.1000XPTraining,
-		Category:MoneyToXP,
-		AnimNode:RemoveGrass,
-		OnCreate : RecoverRubberBands,
-		Time:250.0
-		
-	}
 	/*
 	recipe Convert To Safehouse Ticket {
 		Money = 25,
