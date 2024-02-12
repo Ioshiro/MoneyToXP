@@ -1,4 +1,4 @@
-ContextMenu_Recipe_EN = {
+ContextMenu_EN = {
 	ContextMenu_Recipe_Train_Aim = "Potenzia Mira",
 	ContextMenu_Recipe_Train_Axe = "Potenzia Ascia",
 	ContextMenu_Recipe_Train_Carpentry = "Potenzia Carpenteria",
@@ -19,7 +19,7 @@ ContextMenu_Recipe_EN = {
 	ContextMenu_Recipe_Train_Short_Blade = "Potenzia Lama Corta",
 	ContextMenu_Recipe_Train_Long_Blunt = "Potenzia Contundente Lungo",
 	ContextMenu_Recipe_Train_Short_Blunt = "Potenzia Contundete Corto",
-	ContextMenu_Recipe_Train_Sneak = "Potenzia Furtività",
+	ContextMenu_Recipe_Train_Sneak = "Potenzia Furtivitï¿½",
 	ContextMenu_Recipe_Train_Spear = "Potenzia Lancia",
 	ContextMenu_Recipe_Train_Sprinting = "Potenzia Corsa",
 	ContextMenu_Recipe_Train_Strength = "Potenzia Forza",
