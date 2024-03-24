@@ -403,7 +403,7 @@ module MoneyToXP{
 
 
 	recipe Make Drug1 {
-		GunPowder = 10, BakingSoda, WildGarlicCataplasm, PlantainCataplasm, ComfreyCataplasm, ,Lab.Items.ChHydrocholoricAcidCan= 1,LabItemsChSulfuricAcidCan= 1,LabItems.ChSodiumHydroxideBag = 1,LabItems.MatInfectedBlood,
+		GunPowder = 10, WildGarlicCataplasm, PlantainCataplasm, ComfreyCataplasm, ,LabItems.ChHydrochloricAcidCan= 1,LabItems.ChSulfuricAcidCan= 1,LabItems.ChSodiumHydroxideBag = 1,LabItems.MatInfectedBlood,
 		keep Gloves_Surgical, keep WaterSaucepan/WaterPot, keep Spoon/Fork,
 
 		Result: MoneyToXP.Droga1,
@@ -413,7 +413,7 @@ module MoneyToXP{
 	}
 
 	recipe Make Drug2 {
-		GunPowder = 20, BakingSoda, WildGarlicCataplasm = 2, PlantainCataplasm = 2, ComfreyCataplasm = 2, ,Lab.Items.ChHydrocholoricAcidCan= 2,LabItemsChSulfuricAcidCan= 2,LabItems.ChSodiumHydroxideBag = 2,LabItems.MatInfectedBlood = 2,
+		GunPowder = 20, WildGarlicCataplasm = 2, PlantainCataplasm = 2, ComfreyCataplasm = 2, ,LabItems.ChHydrochloricAcidCan= 2,LabItems.ChSulfuricAcidCan= 2,LabItems.ChSodiumHydroxideBag = 2,LabItems.MatInfectedBlood = 2,
 		keep Gloves_Surgical, keep WaterSaucepan/WaterPot, keep Spoon/Fork,
 
 		SkillRequired:Aiming=1;Axe=1;Woodwork=1;Cooking=1;Electricity=1;Farming=1;Doctor=1;Fishing=1;PlantScavenging=1;Lightfoot=1;LongBlade=1;Blunt=1;Maintenance=1;Mechanics=1;MetalWelding=1;Nimble=1;Reloading=1;SmallBlade=1;SmallBlunt=1;Sneak=1;Spear=1;Sprinting=1;Tailoring=1;Trapping=1,
@@ -424,7 +424,7 @@ module MoneyToXP{
 	}
 
 	recipe Make Drug3 {
-		Antibiotics = 1, GunPowder = 40, BakingSoda, WildGarlicCataplasm = 3, PlantainCataplasm = 3, ComfreyCataplasm = 3, ,Lab.Items.ChHydrocholoricAcidCan= 3,LabItemsChSulfuricAcidCan= 3,LabItems.ChSodiumHydroxideBag = 3,LabItems.MatInfectedBlood = 3,
+		Antibiotics = 1, GunPowder = 40, BakingSoda = 25, WildGarlicCataplasm = 3, PlantainCataplasm = 3, ComfreyCataplasm = 3, ,LabItems.ChHydrochloricAcidCan= 3,LabItems.ChSulfuricAcidCan= 3,LabItems.ChSodiumHydroxideBag = 3,LabItems.MatInfectedBlood = 3,
 		keep Gloves_Surgical, keep WaterSaucepan/WaterPot, keep Spoon/Fork,
 
 		SkillRequired:Aiming=2;Axe=2;Woodwork=2;Cooking=2;Electricity=2;Farming=2;Doctor=2;Fishing=2;PlantScavenging=2;Lightfoot=2;LongBlade=2;Blunt=2;Maintenance=2;Mechanics=2;MetalWelding=2;Nimble=2;Reloading=2;SmallBlade=2;SmallBlunt=2;Sneak=2;Spear=2;Sprinting=2;Tailoring=2;Trapping=2,
@@ -435,7 +435,7 @@ module MoneyToXP{
 	}
 
 	recipe Make Drug4 {
-		Antibiotics = 2, GunPowder = 80, BakingSoda, WildGarlicCataplasm = 4, PlantainCataplasm = 4, ComfreyCataplasm = 4, ,Lab.Items.ChHydrocholoricAcidCan= 4,LabItemsChSulfuricAcidCan= 4,LabItems.ChSodiumHydroxideBag = 4,LabItems.MatInfectedBlood = 4,
+		Antibiotics = 2, GunPowder = 80, BakingSoda = 50, WildGarlicCataplasm = 4, PlantainCataplasm = 4, ComfreyCataplasm = 4, ,LabItems.ChHydrochloricAcidCan= 4,LabItems.ChSulfuricAcidCan= 4,LabItems.ChSodiumHydroxideBag = 4,LabItems.MatInfectedBlood = 4,
 		keep Gloves_Surgical, keep WaterSaucepan/WaterPot, keep Spoon/Fork,
 
 		SkillRequired:Aiming=3;Axe=3;Woodwork=3;Cooking=3;Electricity=3;Farming=3;Doctor=3;Fishing=3;PlantScavenging=3;Lightfoot=3;LongBlade=3;Blunt=3;Maintenance=3;Mechanics=3;MetalWelding=3;Nimble=3;Reloading=3;SmallBlade=3;SmallBlunt=3;Sneak=3;Spear=3;Sprinting=3;Tailoring=3;Trapping=3,
@@ -446,7 +446,7 @@ module MoneyToXP{
 	}
 
 	recipe Make Drug5 {
-		Antibiotics = 4, GunPowder = 120, BakingSoda, WildGarlicCataplasm = 5, PlantainCataplasm = 5, ComfreyCataplasm = 5, ,Lab.Items.ChHydrocholoricAcidCan= 5,LabItemsChSulfuricAcidCan= 5,LabItems.ChSodiumHydroxideBag = 5,LabItems.MatInfectedBlood = 5,
+		Antibiotics = 4, GunPowder = 120, BakingSoda = 100, WildGarlicCataplasm = 5, PlantainCataplasm = 5, ComfreyCataplasm = 5, ,LabItems.ChHydrochloricAcidCan= 5,LabItems.ChSulfuricAcidCan= 5,LabItems.ChSodiumHydroxideBag = 5,LabItems.MatInfectedBlood = 5,
 		keep Gloves_Surgical, keep WaterSaucepan/WaterPot, keep Spoon/Fork,
 		
 		SkillRequired:Aiming=4;Axe=4;Woodwork=4;Cooking=4;Electricity=4;Farming=4;Doctor=4;Fishing=4;PlantScavenging=4;Lightfoot=4;LongBlade=4;Blunt=4;Maintenance=4;Mechanics=4;MetalWelding=4;Nimble=4;Reloading=4;SmallBlade=4;SmallBlunt=4;Sneak=4;Spear=4;Sprinting=4;Tailoring=4;Trapping=4,
