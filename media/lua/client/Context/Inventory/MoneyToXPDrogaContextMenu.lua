@@ -205,7 +205,7 @@ function ISEatFoodAction:perform()
         elseif drogaType == "MoneyToXP.Droga4" then
             xpGain = 5775
         elseif drogaType == "MoneyToXP.Droga5" then
-            xpGain = 23775
+            xpGain = 19125
         end
         self.character:getXp():AddXP(self.item:getModData().perk, xpGain, false, false, true)
     end
