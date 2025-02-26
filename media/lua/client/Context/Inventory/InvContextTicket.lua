@@ -13,19 +13,34 @@ function ISInventoryMenuElements.ContextTicket()
                 return;
 			end
             local player = getPlayer()
-			local subOption= self.invMenu.context:addOption(getText("ContextMenu_Teleport"), player, self.teleportToSafehouse);
+			local option = self.invMenu.context:addOption(getText("ContextMenu_Teleport"), player, nil, nil, nil);
             if player:getHoursSurvived() > 6 or not SafeHouse.hasSafehouse(player) then
-                subOption.notAvailable = true
+                option.notAvailable = true
+                return;
+            end
+            
+            local safehouseOwnerFound = false
+            local playerUsername = player:getUsername()
+            local subMenuSafes = ISContextMenu:getNew(self.invMenu.context);
+            self.invMenu.context:addSubMenu(option, subMenuSafes);
+            for i=0,SafeHouse.getSafehouseList():size()-1 do
+                local safehouse = SafeHouse.getSafehouseList():get(i);
+                if safehouse:getOwner() == playerUsername then
+                    subMenuSafes:addOption(safehouse:getTitle(), player, self.teleportToSafehouse, safehouse);
+                    safehouseOwnerFound = true
+                end
+            end
+            if not safehouseOwnerFound then
+                option.notAvailable = true
             end
         end
     end
 
-    function self.teleportToSafehouse( _p)
-		local safehouse = SafeHouse.hasSafehouse(_p)
+    function self.teleportToSafehouse( _p, _s)
         local ticket = self.invMenu.inventory:getItemFromType("MoneyToXP.SafehouseTicket")
 		if ticket == nil then return end
-        if safehouse == nil then return end
-        local x,y, z = safehouse:getX(), safehouse:getY(), 0
+        if _s == nil then return end
+        local x,y, z = _s:getX(), _s:getY(), 0
         _p:setX(tonumber(x));
         _p:setY(tonumber(y));
         _p:setZ(tonumber(z));
