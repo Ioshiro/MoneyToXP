@@ -247,11 +247,11 @@ module MoneyToXP{
 		Time : 50.0
 	}
 	
-	recipe Convert To 1000 Money {
+	recipe Convert To 250 Money {
 		SpiffoBig,
 		keep [Recipe.GetItemTypes.SharpKnife]/MeatCleaver/Scissors,
 		
-		Result: Money = 1000,
+		Result: Money = 250,
 		Sound:ClothesRipping,
 		AnimNode:RipSheets,
 		Category:MoneyToXP,
